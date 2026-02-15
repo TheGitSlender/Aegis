@@ -4,7 +4,7 @@ import { Brain, BookOpen, BarChart3, ArrowRight, CheckCircle2, Shield } from 'lu
 const features = [
   {
     title: 'AI Concept Simulator',
-    description: 'Explore AI policy concepts through RAG-powered Q&A with Llama 3.3 70B, tailored for Moroccan demographics.',
+    description: 'Explore AI policy concepts through RAG-powered Q&A, tailored for Moroccan demographics.',
     icon: Brain,
     path: '/concepts',
   },
@@ -16,7 +16,7 @@ const features = [
   },
   {
     title: 'Impact Simulator',
-    description: 'Predict socioeconomic shifts with precision AI modeling powered by Groq inference and international evidence.',
+    description: 'Predict socioeconomic shifts with precision AI modeling based on international evidence.',
     icon: BarChart3,
     path: '/simulator',
   },
