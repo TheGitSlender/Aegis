@@ -34,10 +34,6 @@ export default function Home() {
       {/* ── Hero Section ── */}
       <section className="text-center pt-12 pb-4">
         {/* Live badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600 mb-8">
-          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          LLAMA 3.3 70B
-        </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-rich-black leading-tight mb-6">
           AI-Powered Decision Support
