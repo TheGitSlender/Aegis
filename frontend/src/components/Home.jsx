@@ -36,7 +36,7 @@ export default function Home() {
         {/* Live badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600 mb-8">
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          POWERED BY GROQ &middot; LLAMA 3.3 70B
+          LLAMA 3.3 70B
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-rich-black leading-tight mb-6">
@@ -46,9 +46,7 @@ export default function Home() {
         </h1>
 
         <p className="text-gray-500 max-w-xl mx-auto mb-8 leading-relaxed">
-          Leveraging RAG-powered simulations with Llama 3.3 70B via Groq
-          for fast, data-driven policy modeling. Built for Moroccan
-          policymakers.
+          Built for Moroccan policymakers.
         </p>
 
         <div className="flex items-center justify-center gap-4">
