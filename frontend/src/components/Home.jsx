@@ -22,8 +22,8 @@ function useReveal(threshold = 0.15) {
 /* ─── Data ───────────────────────────────────────────── */
 const features = [
   {
-    title: 'Policy Alignment',
-    description: 'Instantly check if new proposals align with national strategies (e.g., NMD) and international treaties using semantic analysis.',
+    title: 'AI Concept Simulator',
+    description: 'Explore AI policy concepts through RAG-powered Q&A, tailored for Moroccan demographics.',
     path: '/concepts',
     visual: (
       <div className="w-full h-28 flex items-end gap-1.5 px-3 pb-1">
@@ -77,8 +77,8 @@ const features = [
     ),
   },
   {
-    title: 'Impact Prediction',
-    description: 'Visualize potential socio-economic outcomes before implementation with our proprietary simulation engine.',
+    title: 'Impact Simulator',
+    description: 'Predict socioeconomic shifts with precision AI modeling based on international evidence.',
     path: '/simulator',
     visual: (
       <div className="w-full h-28 flex items-end gap-3 px-4 pb-2 justify-end">
@@ -124,7 +124,7 @@ export default function Home() {
   const [standardRef, stdVis] = useReveal(0.1);
 
   return (
-    <div className="space-y-32">
+    <div className="space-y-24">
 
       {/* ════════════════════════════════════════
           HERO
