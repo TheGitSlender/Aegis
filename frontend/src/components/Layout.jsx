@@ -16,15 +16,10 @@ const footerLinks = {
     { label: 'Case Studies',      to: '/case-studies' },
   ],
   Resources: [
-    { label: 'Documentation',  to: '/' },
-    { label: 'API Reference',  to: '/' },
-    { label: 'Research Papers',to: '/' },
-    { label: 'Community Forum',to: '/' },
-  ],
-  Contact: [
-    { label: 'Technopolis, Rabat',  to: '/' },
-    { label: 'contact@aegis.ma',    to: '/' },
-    { label: '+212 5 37 00 00 00',  to: '/' },
+    { label: 'Documentation',   to: '/' },
+    { label: 'API Reference',   to: '/' },
+    { label: 'Research Papers', to: '/' },
+    { label: 'Community Forum', to: '/' },
   ],
 };
 
@@ -36,7 +31,7 @@ export default function Layout({ children }) {
       className="min-h-screen flex flex-col bg-great-white"
       style={{
         backgroundImage:
-          'radial-gradient(circle, rgba(75,127,232,0.22) 1px, transparent 1px)',
+          'radial-gradient(circle, rgba(45,122,62,0.15) 1px, transparent 1px)',
         backgroundSize: '36px 36px',
       }}
     >
@@ -46,10 +41,10 @@ export default function Layout({ children }) {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-violet-blue rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-7 h-7 bg-aegis-green rounded-lg flex items-center justify-center shadow-sm">
               <Shield size={14} className="text-white" />
             </div>
-            <span className="font-bold text-ink text-lg tracking-tight">PolicyBridge</span>
+            <span className="font-bold text-ink text-lg tracking-tight">Aegis</span>
           </Link>
 
           {/* Centre links */}
@@ -62,7 +57,7 @@ export default function Layout({ children }) {
                   to={path}
                   className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     active
-                      ? 'bg-violet-blue-50 text-violet-blue'
+                      ? 'bg-aegis-green-50 text-aegis-green'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                   }`}
                 >
@@ -76,9 +71,9 @@ export default function Layout({ children }) {
           {/* CTA */}
           <Link
             to="/simulator"
-            className="px-5 py-2.5 bg-violet-blue text-white text-sm font-semibold rounded-full
-                       hover:bg-violet-blue-700 transition-all duration-200 shadow-sm
-                       hover:shadow-md hover:shadow-violet-blue/25"
+            className="px-5 py-2.5 bg-aegis-green text-white text-sm font-semibold rounded-full
+                       hover:bg-aegis-green-700 transition-all duration-200 shadow-sm
+                       hover:shadow-md hover:shadow-aegis-green/25"
           >
             Start Simulation
           </Link>
@@ -92,13 +87,13 @@ export default function Layout({ children }) {
 
       {/* ── Footer ── */}
       <footer className="bg-rich-black text-white mt-auto">
-        <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 bg-violet-blue rounded-lg flex items-center justify-center">
+              <div className="w-7 h-7 bg-aegis-green rounded-lg flex items-center justify-center">
                 <Shield size={13} className="text-white" />
               </div>
-              <span className="font-bold text-lg">PolicyBridge</span>
+              <span className="font-bold text-lg">Aegis</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
               Empowering Moroccan governance with data-driven AI solutions.
@@ -125,7 +120,7 @@ export default function Layout({ children }) {
 
         <div className="border-t border-gray-800">
           <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p className="text-xs text-gray-600">&copy; 2024 PolicyBridge. All rights reserved.</p>
+            <p className="text-xs text-gray-600">&copy; 2024 Aegis. All rights reserved.</p>
             <div className="flex items-center gap-5 text-xs text-gray-600">
               <Link to="/" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
               <Link to="/" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
