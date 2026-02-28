@@ -272,28 +272,96 @@ class ImpactService:
         return "\n".join(parts) if parts else "No comparable evidence found."
 
     def _generate_recommendations(self, dimensions: list, sectors: list) -> List[str]:
-        """Generate rule-based recommendations from impact scores."""
+        """Generate rule-based recommendations from impact scores.
+
+        Only emit dimension-based recommendations when the dimension has
+        actual evidence (confidence != 'low'). Sector-specific advisories
+        are always included regardless of evidence.
+        """
         recs = []
+        dim_map = {d["name"]: d for d in dimensions}
 
-        for dim in dimensions:
-            if dim["name"] == "Implementation Feasibility" and dim["score"] < 5:
-                recs.append("Consider a phased rollout starting with a pilot in one sector before expanding nationwide.")
-            if dim["name"] == "Economic Impact" and dim["score"] < 4:
-                recs.append("Include compliance cost subsidies for SMEs and startups to prevent market exit.")
-            if dim["name"] == "Social Trust" and dim["score"] > 5:
-                recs.append("Leverage the expected trust improvement for public communication campaigns.")
-            if dim["name"] == "Innovation Environment" and dim["score"] < 4:
-                recs.append("Pair regulation with an AI regulatory sandbox to protect innovation.")
+        feas = dim_map.get("Implementation Feasibility", {})
+        if feas.get("confidence") != "low" and feas.get("score", 10) < 5:
+            # EU AI Act precedent: phased enforcement (banned practices first, then high-risk) gave
+            # industry time to adapt and achieved 60% compliance rate over a 28-month timeline.
+            recs.append(
+                "Adopt a phased enforcement schedule: begin with prohibited use cases, then extend to "
+                "high-risk systems — consistent with EU AI Act implementation (60% compliance, 28-month timeline)."
+            )
 
+        econ = dim_map.get("Economic Impact", {})
+        if econ.get("confidence") != "low" and econ.get("score", 10) < 4:
+            # EU AI Act: active sandbox programs reduced startup relocations by 20% vs. countries
+            # without them. Singapore's voluntary toolkit kept startup growth at +15%.
+            recs.append(
+                "Introduce simplified compliance procedures for SMEs, following Singapore's AI Verify "
+                "self-assessment model which maintained startup growth at +15% vs. -12% under mandatory regimes."
+            )
+
+        trust = dim_map.get("Social Trust", {})
+        if trust.get("confidence") != "low" and trust.get("score", 0) > 5:
+            # Tunisia AI Strategy: francophone legal similarity makes its public trust outcomes
+            # directly transferable to Morocco with minimal adaptation.
+            recs.append(
+                "Leverage the predicted trust improvement through public communication aligned with "
+                "Tunisia's AI governance experience, given the shared francophone legal tradition and North African context."
+            )
+
+        innov = dim_map.get("Innovation Environment", {})
+        if innov.get("confidence") != "low" and innov.get("score", 10) < 4:
+            # Singapore AI Verify: voluntary self-assessment toolkit lowered barriers to adoption
+            # without binding mandates, achieving faster uptake among large enterprises.
+            recs.append(
+                "Consider a voluntary self-assessment framework modeled on Singapore's AI Verify toolkit, "
+                "which lowered compliance costs through standardized testing tools and preserved innovation incentives."
+            )
+
+        # Sector-specific — grounded in case study evidence
         if "agriculture" in sectors:
-            recs.append("Engage JAZARI Institute and agricultural cooperatives for sector-specific AI standards.")
+            # Rwanda National AI Policy: public-private partnerships for agriculture AI generated
+            # visible public value quickly and built political support for further investment.
+            recs.append(
+                "Structure agricultural AI deployment through public-private partnerships, drawing on "
+                "Rwanda's AI national policy which achieved early wins in smallholder farming and secured sustained investment."
+            )
         if "healthcare" in sectors:
-            recs.append("Coordinate with Ministry of Health for AI medical device classification aligned with WHO guidelines.")
+            # Singapore's framework: sector-specific guidance for healthcare providers was a key
+            # provision credited with maintaining public trust in AI-assisted diagnostics.
+            recs.append(
+                "Develop sector-specific AI governance guidance for healthcare in coordination with the "
+                "Ministry of Health, following Singapore's model of dedicated governance modules for medical AI providers."
+            )
         if "finance" in sectors:
-            recs.append("Align with Bank Al-Maghrib digital finance regulations and CNDP requirements.")
+            # South Korea AI Basic Act: coordinating AI regulation with existing financial supervisors
+            # (equivalent to Bank Al-Maghrib) achieved 65% compliance — the highest of any case study.
+            recs.append(
+                "Align with Bank Al-Maghrib and CNDP requirements by delegating sector-level AI oversight "
+                "to existing financial regulators, consistent with South Korea's approach that reached 65% compliance."
+            )
+        if "public_services" in sectors:
+            # Brazil PL 2338/2023: mandatory algorithmic impact assessments for public-sector social
+            # benefit systems improved public trust by 20% and addressed documented equity concerns.
+            recs.append(
+                "Require algorithmic impact assessments for public-sector AI systems, following Brazil's "
+                "PL 2338/2023 model which addressed AI bias in social benefit allocation and improved public trust by 20%."
+            )
+        if "tourism" in sectors:
+            # Tunisia AI Strategy: tourism optimization was an explicit priority sector and produced
+            # early measurable results that attracted European nearshoring partnerships.
+            recs.append(
+                "Prioritize tourism sector AI applications as early demonstrators, leveraging Tunisia's "
+                "AI strategy precedent which generated nearshoring opportunities from European firms."
+            )
 
         if not recs:
-            recs.append("Conduct stakeholder consultations with Morocco's AI ecosystem before finalizing implementation details.")
+            # South Korea: combining regulation with public R&D commitment improved industry buy-in
+            # and built political support for further AI investment.
+            recs.append(
+                "Pair regulatory requirements with public R&D investment commitments to signal both "
+                "safety and economic ambition, following South Korea's approach that achieved the highest "
+                "compliance rate (65%) among comparable policies."
+            )
 
         return recs[:6]
 

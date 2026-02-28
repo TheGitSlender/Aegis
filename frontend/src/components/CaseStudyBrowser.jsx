@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Search, X, Loader2, ChevronRight, Download, ArrowRight,
+  Search, X, Loader2, ChevronRight, ArrowRight,
   CheckCircle2, Info, AlertTriangle, RotateCcw,
 } from 'lucide-react';
 import { listCaseStudies, getCaseStudy } from '../api';
@@ -28,7 +28,7 @@ const COUNTRY_FLAGS = {
 };
 
 const TYPE_BADGE_COLORS = {
-  'comprehensive':     'bg-violet-blue-50 text-violet-blue border border-violet-blue-100',
+  'comprehensive':     'bg-aegis-green-50 text-aegis-green border border-aegis-green-100',
   'bill':             'bg-yellow-50 text-yellow-700 border border-yellow-100',
   'voluntary':        'bg-green-50 text-green-700 border border-green-100',
   'national_strategy':'bg-blue-50 text-blue-700 border border-blue-100',
@@ -51,7 +51,7 @@ function CaseStudyCard({ study, onClick }) {
     <div
       onClick={onClick}
       className="bg-white rounded-xl border border-gray-100 p-5
-                 hover:shadow-md hover:border-violet-blue-100 hover:-translate-y-0.5
+                 hover:shadow-md hover:border-aegis-green-100 hover:-translate-y-0.5
                  transition-all duration-200 cursor-pointer flex flex-col"
     >
       <div className="flex items-center justify-between mb-3">
@@ -82,7 +82,7 @@ function CaseStudyCard({ study, onClick }) {
           <QualityIcon size={11} />
           <span>{quality.label}</span>
         </div>
-        <span className="text-xs font-semibold text-violet-blue flex items-center gap-1">
+        <span className="text-xs font-semibold text-aegis-green flex items-center gap-1">
           Details <ArrowRight size={11} />
         </span>
       </div>
@@ -116,10 +116,10 @@ function CaseStudyDetail({ study, onClose }) {
         <p className="text-gray-600 text-sm leading-relaxed mb-6">{study.policy?.description}</p>
 
         <div className="grid md:grid-cols-3 gap-3 mb-6">
-          <div className="bg-violet-blue-50 rounded-xl p-4">
-            <h4 className="text-xs font-bold text-violet-blue-800 uppercase tracking-wider mb-2">Social Impact</h4>
-            <p className="text-sm text-gray-600">Trust: <span className="font-bold text-violet-blue">+{social.trust_change_pct}%</span></p>
-            <p className="text-sm text-gray-600">Bias ↓: <span className="font-bold text-violet-blue">{social.bias_reduction_pct}%</span></p>
+          <div className="bg-aegis-green-50 rounded-xl p-4">
+            <h4 className="text-xs font-bold text-aegis-green-800 uppercase tracking-wider mb-2">Social Impact</h4>
+            <p className="text-sm text-gray-600">Trust: <span className="font-bold text-aegis-green">+{social.trust_change_pct}%</span></p>
+            <p className="text-sm text-gray-600">Bias ↓: <span className="font-bold text-aegis-green">{social.bias_reduction_pct}%</span></p>
           </div>
           <div className="bg-green-50 rounded-xl p-4">
             <h4 className="text-xs font-bold text-green-800 uppercase tracking-wider mb-2">Economic Impact</h4>
@@ -139,7 +139,7 @@ function CaseStudyDetail({ study, onClose }) {
             <ul className="space-y-1.5">
               {study.policy.key_provisions.map((p, i) => (
                 <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
-                  <span className="text-violet-blue mt-0.5">–</span> {p}
+                  <span className="text-aegis-green mt-0.5">–</span> {p}
                 </li>
               ))}
             </ul>
@@ -214,7 +214,7 @@ export default function CaseStudyBrowser() {
     setCurrentPage(1);
   }, [studies, keyword, selectedRegions, selectedQualities, sortBy]);
 
-  const totalPages      = Math.ceil(filteredStudies.length / ITEMS_PER_PAGE);
+  const totalPages       = Math.ceil(filteredStudies.length / ITEMS_PER_PAGE);
   const paginatedStudies = filteredStudies.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   const handleCardClick = async (id) => {
@@ -232,7 +232,7 @@ export default function CaseStudyBrowser() {
     <div>
       {/* Breadcrumb */}
       <div className="flex items-center gap-1.5 text-sm text-gray-400 mb-5">
-        <Link to="/" className="hover:text-violet-blue transition-colors duration-200">Home</Link>
+        <Link to="/" className="hover:text-aegis-green transition-colors duration-200">Home</Link>
         <ChevronRight size={13} />
         <span className="text-ink font-medium">Case Study Library</span>
       </div>
@@ -249,29 +249,26 @@ export default function CaseStudyBrowser() {
           <select
             value={sortBy}
             onChange={e => setSortBy(e.target.value)}
-            className="px-3 py-2 border border-gray-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-violet-blue"
+            className="px-3 py-2 border border-gray-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-aegis-green"
           >
             <option value="date">Sort: Recent</option>
             <option value="country">Sort: Country</option>
             <option value="name">Sort: Name</option>
           </select>
-          <button className="px-3 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 flex items-center gap-1.5 transition-colors duration-200">
-            <Download size={13} /> Export
-          </button>
         </div>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         {[
-          { label: 'Total Studies',       value: studies.length },
-          { label: 'Global Regions',      value: Object.keys(REGION_MAP).length },
-          { label: 'Comprehensive Acts',  value: studies.filter(s => s.policy_type === 'comprehensive').length },
-          { label: 'High Quality Data',   value: studies.filter(s => s.data_quality === 'high').length },
+          { label: 'Total Studies',      value: studies.length },
+          { label: 'Global Regions',     value: Object.keys(REGION_MAP).length },
+          { label: 'Comprehensive Acts', value: studies.filter(s => s.policy_type === 'comprehensive').length },
+          { label: 'High Quality Data',  value: studies.filter(s => s.data_quality === 'high').length },
         ].map(stat => (
           <div key={stat.label} className="bg-white rounded-xl border border-gray-100 p-4">
             <p className="text-xs text-gray-400 mb-1">{stat.label}</p>
-            <p className="text-2xl font-bold text-violet-blue">{stat.value}</p>
+            <p className="text-2xl font-bold text-aegis-green">{stat.value}</p>
           </div>
         ))}
       </div>
@@ -293,7 +290,7 @@ export default function CaseStudyBrowser() {
                   onChange={e => setKeyword(e.target.value)}
                   placeholder="e.g. EU Act, AIDA..."
                   className="w-full pl-8 pr-3 py-2 border border-gray-200 rounded-lg text-xs
-                             focus:outline-none focus:ring-2 focus:ring-violet-blue"
+                             focus:outline-none focus:ring-2 focus:ring-aegis-green"
                 />
               </div>
             </div>
@@ -303,7 +300,7 @@ export default function CaseStudyBrowser() {
               <div className="space-y-2">
                 {Object.keys(REGION_MAP).map(r => (
                   <label key={r} className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
-                    <input type="checkbox" checked={selectedRegions.includes(r)} onChange={() => toggleRegion(r)} className="accent-violet-blue" />
+                    <input type="checkbox" checked={selectedRegions.includes(r)} onChange={() => toggleRegion(r)} className="accent-aegis-green" />
                     {r}
                   </label>
                 ))}
@@ -315,7 +312,7 @@ export default function CaseStudyBrowser() {
               <div className="space-y-2">
                 {Object.entries(QUALITY_LABELS).map(([key, { label }]) => (
                   <label key={key} className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
-                    <input type="checkbox" checked={selectedQualities.includes(key)} onChange={() => toggleQuality(key)} className="accent-violet-blue" />
+                    <input type="checkbox" checked={selectedQualities.includes(key)} onChange={() => toggleQuality(key)} className="accent-aegis-green" />
                     {label}
                   </label>
                 ))}
@@ -336,7 +333,7 @@ export default function CaseStudyBrowser() {
         <div className="flex-1">
           {loading ? (
             <div className="flex items-center justify-center py-16">
-              <Loader2 size={22} className="animate-spin text-violet-blue" />
+              <Loader2 size={22} className="animate-spin text-aegis-green" />
             </div>
           ) : paginatedStudies.length > 0 ? (
             <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -364,7 +361,7 @@ export default function CaseStudyBrowser() {
                   onClick={() => setCurrentPage(page)}
                   className={`w-8 h-8 text-sm rounded-lg transition-colors duration-200 ${
                     page === currentPage
-                      ? 'bg-violet-blue text-white'
+                      ? 'bg-aegis-green text-white'
                       : 'border border-gray-200 hover:bg-gray-50'
                   }`}
                 >

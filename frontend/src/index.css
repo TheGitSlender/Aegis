@@ -6,22 +6,22 @@
   --font-sans: 'Outfit', system-ui, sans-serif;
 
   /* ── Backgrounds ── */
-  --color-great-white:     #DFE7F5;
-  --color-great-white-100: #D5DFF0;
+  --color-great-white:     #F4FAF6;
+  --color-great-white-100: #ECF5EF;
 
   /* ── Dark text / CTAs ── */
   --color-ink:     #0D1117;
   --color-ink-800: #1C2331;
 
-  /* ── Bar Blue (from chart bars) ── */
-  --color-violet-blue:     #4B7FE8;
-  --color-violet-blue-50:  #EEF3FD;
-  --color-violet-blue-100: #D9E4FB;
-  --color-violet-blue-200: #AABFF5;
-  --color-violet-blue-600: #4B7FE8;
-  --color-violet-blue-700: #3A6ACA;
-  --color-violet-blue-800: #2D54A8;
-  --color-violet-blue-900: #1D3C7A;
+  /* ── Primary green accent ── */
+  --color-aegis-green:     #2D7A3E;
+  --color-aegis-green-50:  #EDF7F0;
+  --color-aegis-green-100: #D0EDD9;
+  --color-aegis-green-200: #A1D9B5;
+  --color-aegis-green-600: #2D7A3E;
+  --color-aegis-green-700: #23633A;
+  --color-aegis-green-800: #1A4E2D;
+  --color-aegis-green-900: #113A1F;
 
   /* ── Footer ── */
   --color-rich-black:     #131B23;
@@ -74,6 +74,10 @@
 @keyframes slideReveal {
   from { opacity: 0; transform: translateY(36px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.5); }
 }
 
 body {

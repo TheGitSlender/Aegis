@@ -31,8 +31,8 @@ const features = [
           <div className="text-[10px] text-gray-400 font-semibold uppercase tracking-wide">Alignment Score</div>
           <div className="flex items-center gap-2 mt-1">
             <span className="text-xs text-gray-500">Vision 2030</span>
-            <span className="text-xs font-bold text-violet-blue bg-violet-blue-50 px-2 py-0.5 rounded-full border border-violet-blue-100">
-              98% Match
+            <span className="text-xs font-bold text-aegis-green bg-aegis-green-50 px-2 py-0.5 rounded-full border border-aegis-green-100">
+              Aligned ✓
             </span>
           </div>
         </div>
@@ -43,8 +43,8 @@ const features = [
             style={{
               height: `${h * 5}px`,
               background: i === 3
-                ? 'linear-gradient(to top, #2D54A8, #4B7FE8)'
-                : i === 4 ? '#AABFF5' : '#D9E4FB',
+                ? 'linear-gradient(to top, #1A4E2D, #2D7A3E)'
+                : i === 4 ? '#A1D9B5' : '#D0EDD9',
               animation: `scaleIn 0.4s cubic-bezier(0.16,1,0.3,1) ${i * 80}ms both`,
             }}
           />
@@ -54,14 +54,14 @@ const features = [
   },
   {
     title: 'Drafting Assistance',
-    description: 'Generate legal texts and policy briefs in formal Arabic and French that adhere to legislative drafting standards.',
+    description: 'Generate legal texts and policy briefs that adhere to legislative drafting standards.',
     path: '/case-studies',
     visual: (
       <div className="w-full h-28 flex flex-col justify-center gap-2 px-4">
         {[1, 0.7, 1, 0.5, 0.85].map((w, i) => (
-          <div key={i} className="h-1.5 rounded-full bg-violet-blue-100" style={{ width: `${w * 100}%` }}>
+          <div key={i} className="h-1.5 rounded-full bg-aegis-green-100" style={{ width: `${w * 100}%` }}>
             <div
-              className="h-full rounded-full bg-violet-blue/40"
+              className="h-full rounded-full bg-aegis-green/40"
               style={{
                 width: i === 3 ? '60%' : '100%',
                 animation: `scaleIn 0.5s ease-out ${i * 70}ms both`,
@@ -88,7 +88,7 @@ const features = [
               key={i}
               className="w-2.5 h-2.5 rounded-full"
               style={{
-                background: ['#D9E4FB', '#4B7FE8', '#2D54A8'][i],
+                background: ['#D0EDD9', '#2D7A3E', '#1A4E2D'][i],
                 animation: `scaleIn 0.4s ease-out ${i * 100}ms both`,
               }}
             />
@@ -101,7 +101,7 @@ const features = [
             style={{
               width: '28px',
               height: `${h}px`,
-              background: `linear-gradient(to top, ${['#2D54A8','#3A6ACA','#4B7FE8'][i]}, ${['#4B7FE8','#6B95ED','#89AAEF'][i]})`,
+              background: `linear-gradient(to top, ${['#1A4E2D','#23633A','#2D7A3E'][i]}, ${['#2D7A3E','#3D9A52','#56B36A'][i]})`,
               animation: `scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 100 + 100}ms both`,
               transformOrigin: 'bottom',
             }}
@@ -141,10 +141,10 @@ export default function Home() {
             style={{ animation: 'var(--animate-fade-in)', animationDelay: '0ms' }}
           >
             <span
-              className="w-1.5 h-1.5 rounded-full bg-violet-blue"
-              style={{ animation: 'ringPulse 2.5s ease-in-out infinite' }}
+              className="w-1.5 h-1.5 rounded-full bg-aegis-green"
+              style={{ animation: 'dotPulse 2s ease-in-out infinite' }}
             />
-            AI Concept Simulator v2.0
+            AI Concept Simulator
           </div>
 
           {/* Heading */}
@@ -172,21 +172,12 @@ export default function Home() {
           >
             <Link
               to="/simulator"
-              className="px-7 py-3.5 bg-violet-blue text-white text-sm font-semibold rounded-full
-                         hover:bg-violet-blue-700 transition-all duration-200
-                         shadow-lg shadow-violet-blue/30 hover:shadow-violet-blue/50
+              className="px-7 py-3.5 bg-aegis-green text-white text-sm font-semibold rounded-full
+                         hover:bg-aegis-green-700 transition-all duration-200
+                         shadow-lg shadow-aegis-green/30 hover:shadow-aegis-green/50
                          hover:-translate-y-0.5"
             >
               Run New Simulation
-            </Link>
-            <Link
-              to="/case-studies"
-              className="px-7 py-3.5 bg-white/80 backdrop-blur-sm text-ink text-sm font-semibold
-                         rounded-full border border-white/90 hover:border-violet-blue-200
-                         hover:bg-white hover:text-violet-blue
-                         transition-all duration-200 shadow-sm"
-            >
-              View Demo
             </Link>
           </div>
 
@@ -195,7 +186,7 @@ export default function Home() {
             className="inline-flex items-center gap-1.5 text-xs text-gray-400 font-medium"
             style={{ animation: 'var(--animate-fade-in)', animationDelay: '340ms' }}
           >
-            <Shield size={12} className="text-violet-blue" />
+            <Shield size={12} className="text-aegis-green" />
             Secure Government Standard Compliance
           </div>
         </div>
@@ -213,11 +204,11 @@ export default function Home() {
             transform: featVis ? 'translateY(0)' : 'translateY(24px)',
           }}
         >
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-violet-blue uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-aegis-green uppercase tracking-widest mb-4">
             <span>✦</span> Core Capabilities
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-4">
-            Why policymakers choose PolicyBridge
+            Why Policymakers Choose Aegis
           </h2>
           <p className="text-gray-500 max-w-md mx-auto text-base leading-relaxed">
             We combine advanced LLMs with validated econometric models to simplify the
@@ -232,7 +223,7 @@ export default function Home() {
               to={path}
               className="block bg-white/70 backdrop-blur-sm rounded-2xl border border-white/90
                          overflow-hidden hover:-translate-y-1.5 hover:shadow-xl
-                         hover:shadow-violet-blue/10 hover:border-violet-blue-100
+                         hover:shadow-aegis-green/10 hover:border-aegis-green-100
                          transition-all duration-300 group"
               style={{
                 transition: 'opacity 0.6s ease, transform 0.6s ease',
@@ -248,7 +239,7 @@ export default function Home() {
               </div>
               {/* Text */}
               <div className="p-6">
-                <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-violet-blue transition-colors duration-200">
+                <h3 className="font-bold text-ink text-lg mb-2 group-hover:text-aegis-green transition-colors duration-200">
                   {title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
@@ -269,7 +260,7 @@ export default function Home() {
         <div
           className="pointer-events-none absolute inset-0 rounded-3xl"
           style={{
-            background: 'radial-gradient(ellipse at 80% 50%, rgba(75,127,232,0.07) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse at 80% 50%, rgba(45,122,62,0.07) 0%, transparent 65%)',
           }}
         />
 
@@ -288,8 +279,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-sm">
               Our platform is architected for the unique needs of the Moroccan
-              administration. Powered by Groq&rsquo;s ultra-fast inference engine
-              and grounded in international policy evidence.
+              administration. Grounded in international policy evidence.
             </p>
             <ul className="space-y-4">
               {standardPoints.map((point, i) => (
@@ -303,7 +293,7 @@ export default function Home() {
                     transform: stdVis ? 'translateX(0)' : 'translateX(-16px)',
                   }}
                 >
-                  <CheckCircle2 size={17} className="text-violet-blue shrink-0" />
+                  <CheckCircle2 size={17} className="text-aegis-green shrink-0" />
                   {point}
                 </li>
               ))}
@@ -314,7 +304,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-5 shrink-0">
             {/* Benchmarks */}
             <div
-              className="bg-white/80 backdrop-blur-sm border border-white/90 rounded-2xl p-7 w-56 shadow-sm"
+              className="bg-white/80 backdrop-blur-sm border border-aegis-green-100 rounded-2xl p-7 w-56 shadow-sm"
               style={{
                 transition: 'opacity 0.6s ease, transform 0.6s ease',
                 transitionDelay: '150ms',
@@ -325,7 +315,7 @@ export default function Home() {
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Benchmarks</p>
               <p className="text-5xl font-extrabold text-ink mb-1.5">8+</p>
               <p className="text-sm text-gray-500 mb-4">Global Policies Integrated</p>
-              <div className="w-10 h-1.5 bg-violet-blue rounded-full" />
+              <div className="w-10 h-1.5 bg-aegis-green rounded-full" />
             </div>
 
             {/* Performance */}
@@ -338,12 +328,12 @@ export default function Home() {
                 transform: stdVis ? 'translateY(0)' : 'translateY(24px)',
               }}
             >
-              <p className="text-xs font-bold text-violet-blue-200 uppercase tracking-wider mb-3">Performance</p>
+              <p className="text-xs font-bold text-aegis-green-200 uppercase tracking-wider mb-3">Performance</p>
               <p className="text-4xl font-extrabold mb-0.5">&lt;2s</p>
               <p className="text-lg font-bold italic mb-1.5">Response</p>
               <p className="text-sm text-gray-400 mb-5">Groq-Powered Inference</p>
               <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                <Shield size={11} className="text-violet-blue-200" />
+                <Shield size={11} className="text-aegis-green-200" />
                 <span className="font-bold uppercase tracking-wide">70B Parameter Model</span>
               </div>
             </div>
