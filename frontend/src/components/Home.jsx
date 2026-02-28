@@ -54,7 +54,7 @@ const features = [
   },
   {
     title: 'Drafting Assistance',
-    description: 'Generate legal texts and policy briefs in formal Arabic and French that adhere to legislative drafting standards.',
+    description: 'Generate legal texts and policy briefs that adhere to legislative drafting standards.',
     path: '/case-studies',
     visual: (
       <div className="w-full h-28 flex flex-col justify-center gap-2 px-4">
@@ -208,7 +208,7 @@ export default function Home() {
             <span>✦</span> Core Capabilities
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-4">
-            Why policymakers choose Aegis
+            Why Policymakers Choose Aegis
           </h2>
           <p className="text-gray-500 max-w-md mx-auto text-base leading-relaxed">
             We combine advanced LLMs with validated econometric models to simplify the
@@ -279,8 +279,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-sm">
               Our platform is architected for the unique needs of the Moroccan
-              administration. Powered by Groq&rsquo;s ultra-fast inference engine
-              and grounded in international policy evidence.
+              administration. Grounded in international policy evidence.
             </p>
             <ul className="space-y-4">
               {standardPoints.map((point, i) => (

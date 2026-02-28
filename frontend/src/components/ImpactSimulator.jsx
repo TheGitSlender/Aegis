@@ -203,7 +203,7 @@ export default function ImpactSimulator() {
     <div>
       <div className="mb-6">
         <div className="inline-flex items-center gap-1.5 text-xs font-bold text-aegis-green uppercase tracking-widest mb-3">
-          <span>✦</span> AI Policy Analysis v2.0
+          <span>✦</span> AI Policy Analysis
         </div>
         <h1 className="text-2xl font-bold text-ink tracking-tight">Impact Simulator</h1>
         <p className="text-gray-500 text-sm mt-1">Predict how a proposed AI policy would impact Morocco.</p>

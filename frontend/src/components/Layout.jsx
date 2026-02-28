@@ -12,7 +12,6 @@ const footerLinks = {
   Platform: [
     { label: 'Simulation Engine', to: '/simulator'    },
     { label: 'Data Sources',      to: '/case-studies' },
-    { label: 'Security',          to: '/'             },
     { label: 'Case Studies',      to: '/case-studies' },
   ],
   Resources: [
@@ -120,7 +119,7 @@ export default function Layout({ children }) {
 
         <div className="border-t border-gray-800">
           <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p className="text-xs text-gray-600">&copy; 2024 Aegis. All rights reserved.</p>
+            <p className="text-xs text-gray-600">&copy; 2026 Aegis. All rights reserved.</p>
             <div className="flex items-center gap-5 text-xs text-gray-600">
               <Link to="/" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
               <Link to="/" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
