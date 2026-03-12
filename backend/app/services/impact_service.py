@@ -9,27 +9,6 @@ logger = logging.getLogger(__name__)
 
 POLICY_TEMPLATES = [
     {
-        "id": "bias_testing",
-        "name": "Mandatory Bias Testing",
-        "description": "Require all AI systems used in public services to undergo bias testing before deployment, with annual re-evaluation.",
-        "sectors": ["public_services", "healthcare", "education"],
-        "policy_type": "sectoral"
-    },
-    {
-        "id": "transparency_requirement",
-        "name": "AI Transparency Requirement",
-        "description": "Mandatory disclosure when AI is used in decisions affecting citizens. Public sector AI systems must provide explanations for automated decisions.",
-        "sectors": ["public_services", "finance"],
-        "policy_type": "sectoral"
-    },
-    {
-        "id": "ai_sandbox",
-        "name": "AI Regulatory Sandbox",
-        "description": "Create a controlled environment where AI startups can test innovations with relaxed regulations for 2 years, with CNDP oversight.",
-        "sectors": ["finance", "healthcare", "agriculture"],
-        "policy_type": "sandbox"
-    },
-    {
         "id": "data_governance",
         "name": "National Data Governance Framework",
         "description": "Establish data sharing standards, quality requirements, and governance structures for public sector data used to train AI systems.",
@@ -42,6 +21,27 @@ POLICY_TEMPLATES = [
         "description": "Comprehensive risk-based AI regulation modeled on the EU AI Act but adapted for Morocco's economic context and Digital Morocco 2030 strategy.",
         "sectors": ["all"],
         "policy_type": "comprehensive"
+    },
+    {
+        "id": "ai_governance_code",
+        "name": "AI Voluntary Governance Code",
+        "description": "A government-backed voluntary code of practice for responsible AI deployment, offering a self-assessment toolkit and industry incentives to encourage adoption without binding mandates.",
+        "sectors": ["finance", "healthcare", "public_services"],
+        "policy_type": "voluntary"
+    },
+    {
+        "id": "ai_data_bill",
+        "name": "AI and Data Protection Bill",
+        "description": "A legislative bill extending Morocco's existing Law 09-08 data protection framework to cover AI systems, introducing impact assessments and transparency obligations for high-risk automated decisions.",
+        "sectors": ["public_services", "finance", "healthcare"],
+        "policy_type": "bill"
+    },
+    {
+        "id": "digital_morocco_ai_strategy",
+        "name": "Digital Morocco AI Strategy",
+        "description": "A national AI strategy aligned with Digital Morocco 2030, prioritising capacity building, Arabic/French NLP development, and AI adoption in agriculture, tourism, and public administration.",
+        "sectors": ["agriculture", "tourism", "public_services", "education"],
+        "policy_type": "national_strategy"
     }
 ]
 

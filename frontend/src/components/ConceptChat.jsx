@@ -72,7 +72,7 @@ export default function ConceptChat() {
         </div>
 
         {/* Messages */}
-        <div ref={messagesAreaRef} className="flex-1 overflow-y-auto space-y-5 pr-1">
+        <div ref={messagesAreaRef} className={`flex-1 space-y-5 pr-1 ${messages.length > 0 || loading ? 'overflow-y-auto' : 'overflow-hidden'}`}>
 
           {/* Empty state with concept chips */}
           {messages.length === 0 && !loading && concepts.length > 0 && (
