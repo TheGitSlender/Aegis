@@ -22,8 +22,11 @@ const footerLinks = {
   ],
 };
 
+const APP_PAGES = ['/concepts', '/case-studies', '/simulator'];
+
 export default function Layout({ children }) {
   const location = useLocation();
+  const isAppPage = APP_PAGES.some(p => location.pathname.startsWith(p));
 
   return (
     <div
@@ -84,8 +87,8 @@ export default function Layout({ children }) {
         {children}
       </main>
 
-      {/* ── Footer ── */}
-      <footer className="bg-rich-black text-white mt-auto">
+      {/* ── Footer (home only) ── */}
+      {!isAppPage && <footer className="bg-rich-black text-white mt-auto">
         <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
@@ -126,7 +129,7 @@ export default function Layout({ children }) {
             </div>
           </div>
         </div>
-      </footer>
+      </footer>}
     </div>
   );
 }
